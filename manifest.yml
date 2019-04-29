@@ -1,0 +1,12 @@
+---
+applications:
+- name: product
+  memory: 1G
+  instances: 1
+  path: build/libs/ConfigServerConsumer-0.0.1-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack
+  services:  - config-server
+  env:
+    SPRING_PROFILES_ACTIVE : dev
+  #routes:  #- route:
+  random-route: true
